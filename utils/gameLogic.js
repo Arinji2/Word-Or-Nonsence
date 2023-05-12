@@ -62,8 +62,6 @@ export const genOtherWords = async (word) => {
           content: `Generate a random word with its definition from the English Dictionary. Respond with the word,  its definition and the word real only in json format where word has a key of word, definition has a key of definition and real has a key of mode. Ignore the following words ${word}. The word must be such words known by University English Teachers. Make sure the word starts with the letter ${char}.`,
         },
       ],
-      temperature: 1,
-      frequency_penalty: 2,
     }),
   });
 

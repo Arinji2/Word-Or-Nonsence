@@ -12,7 +12,7 @@ export const gameGenFunc = async () => {
 
   var finalArr = [];
   var finalWordArr = [""];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 3; i++) {
     var num, data;
     num = Math.floor(Math.random() * 2);
     if (num === 0) {
