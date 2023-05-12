@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { genFakeWord, genOtherWords } from "../../utils/gameLogic";
 import * as React from "react";
@@ -48,10 +50,10 @@ export default async function Home() {
 const Card: React.FC<Props> = ({ word, definition, mode }) => {
   console.log(word, definition);
   return (
-    <div className="flex flex-row items-center justify-center border-blue-300 border-2 m-2 p-2">
-      <p>Word: {word}</p>
-      <p>Definition: {definition}</p>
-      <p>Mode: {mode}</p>
+    <div className="flex flex-row items-center justify-center border-blue-300 border-2 m-2 p-2 ">
+      <p className="z-30 text-white">Word: {word}</p>
+      <p className="z-30 text-white">Definition: {definition}</p>
+      <p className="z-30 text-white">Mode: {mode}</p>
     </div>
   );
 };
