@@ -1,5 +1,3 @@
-"use client";
-
 export const genFakeWord = async (word) => {
   await resetIp();
   const letter = Math.floor(Math.random() * 26) + 97;

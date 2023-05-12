@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { genFakeWord, genOtherWords } from "../../utils/gameLogic";
 import * as React from "react";
