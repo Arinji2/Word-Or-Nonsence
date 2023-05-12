@@ -15,7 +15,7 @@ export default async function Home() {
   return (
     <div className="w-full h-fit md:h-[100svh] flex flex-col items-center justify-start relative  font-bold">
       <Image
-        src="/boat.png"
+        src="/Boat.png"
         fill
         quality={100}
         priority

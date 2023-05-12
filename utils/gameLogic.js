@@ -10,6 +10,7 @@ export const genFakeWord = async (word) => {
       "Content-Type": "application/json",
     },
     cache: "force-cache",
+    next: { revalidate: 0 },
 
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
@@ -29,7 +30,6 @@ export const genFakeWord = async (word) => {
   });
 
   const data = await res.json();
-  console.log(data);
   const jsonData = JSON.parse(data.choices[0].message.content);
   console.log(jsonData);
   return jsonData;
@@ -46,6 +46,7 @@ export const genOtherWords = async (word) => {
       "Content-Type": "application/json",
     },
     cache: "force-cache",
+    next: { revalidate: 0 },
 
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
@@ -83,6 +84,7 @@ async function resetIp() {
       headers: headers,
       body: "",
       cache: "force-cache",
+      next: { revalidate: 0 },
     };
     await fetch("https://api.pawan.krd/resetip", options);
   } catch (err) {
