@@ -33,8 +33,13 @@ export default async function Home() {
 
   return (
     <div className="w-full h-[100svh] bg-black flex flex-col items-center justify-center">
-      {finalArr.map((word: any) => (
-        <Card word={word.word} definition={word.definition} mode={word.mode} />
+      {finalArr.map((word: any, i: number) => (
+        <Card
+          word={word.word}
+          definition={word.definition}
+          mode={word.mode}
+          key={i}
+        />
       ))}
     </div>
   );
