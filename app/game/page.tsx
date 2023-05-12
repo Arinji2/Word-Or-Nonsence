@@ -19,7 +19,7 @@ export default async function Home() {
 
   var finalArr = [];
   var finalWordArr = [""];
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 5; i++) {
     var num, data;
     num = Math.floor(Math.random() * 2);
     if (num === 0) {
