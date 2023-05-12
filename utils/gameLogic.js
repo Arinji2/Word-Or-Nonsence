@@ -9,7 +9,7 @@ export const genFakeWord = async (word) => {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
       "Content-Type": "application/json",
     },
-    cache: "force-cache",
+    cache: "no-store",
 
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
@@ -45,7 +45,7 @@ export const genOtherWords = async (word) => {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
       "Content-Type": "application/json",
     },
-    cache: "force-cache",
+    cache: "no-store",
 
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
@@ -82,6 +82,7 @@ async function resetIp() {
       method: "POST",
       headers: headers,
       body: "",
+      cache: "no-store",
     };
     await fetch("https://api.pawan.krd/resetip", options);
   } catch (err) {
