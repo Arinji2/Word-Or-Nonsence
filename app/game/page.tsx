@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { genFakeWord, genOtherWords } from "../../utils/gameLogic";
+import { gameGenFunc } from "../../utils/gameGenFunc";
 import * as React from "react";
 
 interface Props {
@@ -17,19 +18,7 @@ export default async function Home() {
     return data;
   };
 
-  var finalArr = [];
-  var finalWordArr = [""];
-  for (let i = 0; i < 5; i++) {
-    var num, data;
-    num = Math.floor(Math.random() * 2);
-    if (num === 0) {
-      data = await genRealFunc(finalWordArr);
-    } else {
-      data = await genFakeFunc(finalWordArr);
-    }
-    finalArr.push(data);
-    finalWordArr.push(data.word);
-  }
+  const finalArr = (await gameGenFunc()) as any;
 
   return (
     <div className="w-full h-[100svh] bg-black flex flex-col items-center justify-center">

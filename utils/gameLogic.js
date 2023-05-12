@@ -31,7 +31,7 @@ export const genFakeWord = async (word) => {
 
   const data = await res.json();
   const jsonData = JSON.parse(data.choices[0].message.content);
-  console.log(jsonData);
+  console.log("fake");
   return jsonData;
 };
 
@@ -70,7 +70,7 @@ export const genOtherWords = async (word) => {
   const data = await res.json();
 
   const jsonData = JSON.parse(data.choices[0].message.content);
-
+  console.log("real");
   return jsonData;
 };
 
