@@ -5,10 +5,10 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 interface CardProps {
   title: string;
-  icon: any;
+  image: string;
   link: string;
 }
 export default async function Home() {
@@ -27,21 +27,34 @@ export default async function Home() {
         Begin your Journey
       </h1>
       <div className="w-full h-full flex flex-row items-center justify-evenly flex-wrap ">
-        <Card icon={faUserAlt} title="Single Player" link="/single" />
-        <Card icon={faUsers} title="Multi Player" link="/multi" />
+        <Card image="/levels/Level1.png" title="City" link="/1" />
+        <Card image="/levels/Level2.png" title="Boat" link="/2" />
+        <Card image="/levels/Level3.png" title="Rocket" link="/3" />
+        <Card image="/levels/Level4.png" title="Night" link="/4" />
       </div>
     </div>
   );
 }
 
-const Card: FC<CardProps> = ({ title, icon, link }) => {
+const Card: FC<CardProps> = ({ title, image, link }) => {
+  const [url, setUrl] = useState("");
+
+  useEffect(() => {
+    setUrl(
+      localStorage.getItem("Player2") === null
+        ? `/game/single${link}`
+        : `/game/multi${link}`
+    );
+  }, []);
+
   return (
     <Link
-      href={link}
-      className="w-[230px] h-[355px] bg-[#EAB308] flex flex-col items-center justify-center gap-10 rounded-md text-white z-30 m-2 text-center hover:scale-110 transition-all ease-in-out duration-300"
+      href={url}
+      className="w-[200px] h-[200px] relative flex flex-col items-center justify-center gap-10 rounded-md text-white z-30 m-2 text-center hover:scale-110 transition-all ease-in-out duration-300 overflow-hidden"
     >
-      <FontAwesomeIcon icon={icon as IconProp} className="w-[70px] h-[70px] " />
-      <p className="text-[50px]">{title}</p>
+      <Image src={image} fill alt={title} className="object-cover absolute" />
+      <div className="w-full h-full absolute bg-[#1f1f1f] opacity-50 z-20"></div>
+      <p className="text-[50px] z-30">{title}</p>
     </Link>
   );
 };
