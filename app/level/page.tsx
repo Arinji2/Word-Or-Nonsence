@@ -1,8 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 "use client";
 
-import { faUserAlt, faUsers } from "@fortawesome/fontawesome-free-solid";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useEffect, useState } from "react";
@@ -15,7 +14,7 @@ export default async function Home() {
   return (
     <div className="w-full h-fit md:h-[100svh] flex flex-col items-center justify-start relative  font-bold">
       <Image
-        src="/boat.png"
+        src="/Boat.png"
         fill
         quality={100}
         priority
@@ -27,10 +26,10 @@ export default async function Home() {
         Begin your Journey
       </h1>
       <div className="w-full h-full flex flex-row items-center justify-evenly flex-wrap ">
-        <Card image="/levels/Level1.png" title="City" link="/1" />
-        <Card image="/levels/Level2.png" title="Boat" link="/2" />
-        <Card image="/levels/Level3.png" title="Rocket" link="/3" />
-        <Card image="/levels/Level4.png" title="Night" link="/4" />
+        <Card image="/levels/Level1.png" title="City" link="/Level1" />
+        <Card image="/levels/Level2.png" title="Boat" link="/Level2" />
+        <Card image="/levels/Level3.png" title="Rocket" link="/Level3" />
+        <Card image="/levels/Level4.png" title="Night" link="/Level4" />
       </div>
     </div>
   );
@@ -42,8 +41,8 @@ const Card: FC<CardProps> = ({ title, image, link }) => {
   useEffect(() => {
     setUrl(
       localStorage.getItem("Player2") === null
-        ? `/game/single${link}`
-        : `/game/multi${link}`
+        ? `/game/single${link}/0`
+        : `/game/multi${link}/0`
     );
   }, []);
 

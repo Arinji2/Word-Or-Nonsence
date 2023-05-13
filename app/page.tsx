@@ -5,13 +5,16 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 interface CardProps {
   title: string;
   icon: any;
   link: string;
 }
 export default async function Home() {
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
   return (
     <div className="w-full h-fit md:h-[100svh] flex flex-col items-center justify-start relative  font-bold">
       <Image

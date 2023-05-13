@@ -8,7 +8,7 @@ export default async function Home() {
   return (
     <div className="w-full h-fit md:h-[120svh] flex flex-col items-center justify-start relative  font-bold">
       <Image
-        src="/boat.png"
+        src="/Boat.png"
         fill
         quality={100}
         priority
@@ -28,7 +28,7 @@ export default async function Home() {
           if (localStorage.getItem("Player1") === null) {
             localStorage.setItem(
               "Player1",
-              JSON.stringify({ name: "Guest1", url: "/Default.svg" })
+              JSON.stringify({ name: "Guest1", url: "1234" })
             );
           }
           window.location.assign("/level");

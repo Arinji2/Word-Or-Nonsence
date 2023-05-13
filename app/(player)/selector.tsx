@@ -13,17 +13,20 @@ interface CardProps {
 }
 
 export const Card: FC<CardProps> = ({ player, red }) => {
-  const seed = Math.random().toString();
   const [url, setUrl] = useState("/Default.svg");
   const [name, setName] = useState("Guest");
+  const [personSeed, setPersonSeed] = useState("1234");
 
   const genAvatar = async () => {
+    const seed = Math.random().toString();
     const svg = await fetch(
       `https://api.dicebear.com/6.x/pixel-art/svg?seed=${seed}`
     );
+
     const blob = await svg.blob();
     const link = URL.createObjectURL(blob);
 
+    setPersonSeed(seed);
     setUrl(link);
   };
 
@@ -43,7 +46,7 @@ export const Card: FC<CardProps> = ({ player, red }) => {
         </div>
         <FontAwesomeIcon
           icon={faRandom as IconProp}
-          className="w-[50px] h-[50px] text-[#22C55E] bg-white p-4 rounded-lg"
+          className="w-[50px] h-[50px] text-[#22C55E] bg-white p-4 rounded-lg hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-300"
           onClick={genAvatar}
         />
       </div>
@@ -58,9 +61,10 @@ export const Card: FC<CardProps> = ({ player, red }) => {
       ></input>
       <FontAwesomeIcon
         icon={faCheck as IconProp}
-        className="w-[50px] h-[50px] text-white bg-[#22C55E] p-4 rounded-lg"
+        className="w-[50px] h-[50px] text-white bg-[#22C55E] p-4 rounded-lg hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-300"
         onClick={() => {
-          localStorage.setItem(player, JSON.stringify({ name, url }));
+          localStorage.setItem(player, JSON.stringify({ name, personSeed }));
+          console.log(personSeed);
         }}
       />
     </div>
