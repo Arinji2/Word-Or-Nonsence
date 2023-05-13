@@ -22,7 +22,7 @@ interface Props {
 
 export function Card({ level, question, player, serverArr }: Props) {
   const router = useRouter();
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(9999);
   const [real, setReal] = useState(false);
   const [input, setInput] = useState(false);
   const [answered, setAnswered] = useState(false);
@@ -120,7 +120,7 @@ export function Card({ level, question, player, serverArr }: Props) {
         mode: serverArr[parseInt(question)].mode,
       });
       setLoading(false);
-      setTime(5);
+      setTime(10);
     } else {
       getWordFunc().then((word) => {
         setWord({
@@ -129,7 +129,7 @@ export function Card({ level, question, player, serverArr }: Props) {
           mode: word.mode,
         });
         setLoading(false);
-        setTime(5);
+        setTime(10);
       });
     }
   }, [question, serverArr, router]);
@@ -206,7 +206,7 @@ export function Card({ level, question, player, serverArr }: Props) {
             <p className="text-3xl md:text-5xl">{word.word}</p>
           </div>
           <div className="w-fit min-w-[95%] md:min-w-[80%]  h-fit p-3 text-center text-[#EAB308] bg-white rounded-lg z-30 relative line-clamp-1 ">
-            <p className="text-2xl md:text-4xl">{word.definition}</p>
+            <p className="text-xl md:text-4xl">{word.definition}</p>
           </div>
           <div className="w-fit h-fit flex flex-row items-center justify-center gap-5 md:gap-20 z-30">
             <div

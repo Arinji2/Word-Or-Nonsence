@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Loading() {
   return (
-    <div className="w-full h-[100vh] flex flex-col items-center justify-start fixed top-0 z-[500] bg-[#1E1E1E] gap-5 md:gap-10">
+    <div className="w-full h-[100vh] flex flex-col items-center justify-start fixed top-0 z-[500] bg-[#1E1E1E] gap-5 md:gap-10 m-2">
       <h1 className="mt-56 md:mt-40 text-[45px] md:text-[60px] text-white z-30 text-center">
         How To Play
       </h1>
