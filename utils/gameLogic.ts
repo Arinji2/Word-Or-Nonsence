@@ -12,7 +12,7 @@ export async function genFakeWord(word: string[] | string) {
     method: "POST",
     headers: {
       Authorization: `${process.env.ACCESS_KEY}`,
-      "SPEED": "FAST"
+      SPEED: "FAST",
       "Content-Type": "application/json",
     },
     cache: "no-store",
@@ -69,7 +69,7 @@ export async function genOtherWords(word: string[] | string) {
     method: "POST",
     headers: {
       Authorization: `${process.env.ACCESS_KEY}`,
-       "SPEED": "FAST",
+      SPEED: "FAST",
       "Content-Type": "application/json",
     },
     cache: "no-store",
