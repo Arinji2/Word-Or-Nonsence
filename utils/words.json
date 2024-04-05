@@ -1,0 +1,317 @@
+{
+  "real": [
+    {
+      "word": "aberration",
+      "definition": "a departure from what is normal or typical"
+    },
+    { "word": "benevolent", "definition": "well-meaning and kindly" },
+    {
+      "word": "catalyst",
+      "definition": "a substance that increases the rate of a chemical reaction"
+    },
+    { "word": "deleterious", "definition": "causing harm or damage" },
+    { "word": "ephemeral", "definition": "lasting for a very short time" },
+    {
+      "word": "fervent",
+      "definition": "having or displaying a passionate intensity"
+    },
+    { "word": "gregarious", "definition": "fond of company; sociable" },
+    {
+      "word": "hedonist",
+      "definition": "a person who pursues pleasure as a goal"
+    },
+    {
+      "word": "insidious",
+      "definition": "proceeding in a gradual, subtle way, but with harmful effects"
+    },
+    {
+      "word": "juxtaposition",
+      "definition": "the fact of two things being seen or placed close together with contrasting effect"
+    },
+    {
+      "word": "kaleidoscope",
+      "definition": "a constantly changing pattern or sequence of elements"
+    },
+    {
+      "word": "luminous",
+      "definition": "full of or shedding light; bright or shining, especially in the dark"
+    },
+    {
+      "word": "malleable",
+      "definition": "able to be hammered or pressed permanently out of shape without breaking or cracking"
+    },
+    { "word": "nemesis", "definition": "a long-standing rival; an archenemy" },
+    {
+      "word": "obfuscate",
+      "definition": "render obscure, unclear, or unintelligible"
+    },
+    {
+      "word": "paradigm",
+      "definition": "a typical example or pattern of something; a model"
+    },
+    {
+      "word": "quintessential",
+      "definition": "representing the most perfect or typical example of a quality or class"
+    },
+    {
+      "word": "resilient",
+      "definition": "able to recoil or spring back into shape after bending, stretching, or being compressed"
+    },
+    {
+      "word": "serendipity",
+      "definition": "the occurrence and development of events by chance in a happy or beneficial way"
+    },
+    {
+      "word": "taciturn",
+      "definition": "reserved or uncommunicative in speech; saying little"
+    },
+    {
+      "word": "ubiquitous",
+      "definition": "present, appearing, or found everywhere"
+    },
+    { "word": "veracity", "definition": "conformity to facts; accuracy" },
+    { "word": "wanderlust", "definition": "a strong desire to travel" },
+    {
+      "word": "xenophile",
+      "definition": "a person who is attracted to foreign peoples, cultures, or customs"
+    },
+    {
+      "word": "yearning",
+      "definition": "a feeling of intense longing for something"
+    },
+    { "word": "zealous", "definition": "having or showing zeal; fervent" },
+    {
+      "word": "aplomb",
+      "definition": "self-confidence or assurance, especially when in a demanding situation"
+    },
+    { "word": "bolster", "definition": "support or strengthen; prop up" },
+    {
+      "word": "candor",
+      "definition": "the quality of being open and honest in expression; frankness"
+    },
+    { "word": "debilitate", "definition": "make someone weak and infirm" },
+    { "word": "effervescent", "definition": "vivacious and enthusiastic" },
+    {
+      "word": "facetious",
+      "definition": "treating serious issues with deliberately inappropriate humor; flippant"
+    },
+    {
+      "word": "garrulous",
+      "definition": "excessively talkative, especially on trivial matters"
+    },
+    {
+      "word": "histrionic",
+      "definition": "overly theatrical or melodramatic in character or style"
+    },
+    {
+      "word": "impetuous",
+      "definition": "acting or done quickly and without thought or care"
+    },
+    {
+      "word": "jubilant",
+      "definition": "feeling or expressing great happiness and triumph"
+    },
+    {
+      "word": "kowtow",
+      "definition": "act in an excessively subservient manner"
+    },
+    { "word": "laconic", "definition": "using very few words" },
+    {
+      "word": "magnanimous",
+      "definition": "very generous or forgiving, especially toward a rival or someone less powerful than oneself"
+    },
+    {
+      "word": "noxious",
+      "definition": "harmful, poisonous, or very unpleasant"
+    },
+    {
+      "word": "obsequious",
+      "definition": "obedient or attentive to an excessive or servile degree"
+    },
+    {
+      "word": "pugnacious",
+      "definition": "eager or quick to argue, quarrel, or fight"
+    },
+    {
+      "word": "quixotic",
+      "definition": "exceedingly idealistic; unrealistic and impractical"
+    },
+    {
+      "word": "recalcitrant",
+      "definition": "having an obstinately uncooperative attitude towards authority or discipline"
+    },
+    {
+      "word": "sagacious",
+      "definition": "having or showing keen mental discernment and good judgment; shrewd"
+    },
+    {
+      "word": "trepidation",
+      "definition": "a feeling of fear or agitation about something that may happen"
+    },
+    {
+      "word": "ubiquitous",
+      "definition": "present, appearing, or found everywhere"
+    },
+    {
+      "word": "verisimilitude",
+      "definition": "the appearance of being true or real"
+    },
+    {
+      "word": "wistful",
+      "definition": "having or showing a feeling of vague or regretful longing"
+    },
+    {
+      "word": "xenophobia",
+      "definition": "dislike of or prejudice against people from other countries"
+    },
+    {
+      "word": "yokel",
+      "definition": "an uneducated and unsophisticated person from the countryside"
+    },
+    {
+      "word": "zealot",
+      "definition": "a person who is fanatical and uncompromising in pursuit of their religious, political, or other ideals"
+    }
+  ],
+  "fake": [
+    {
+      "word": "altrusion",
+      "definition": "the act of introducing something new or different"
+    },
+    { "word": "braxiate", "definition": "to swing or move by arm over arm" },
+    { "word": "crellify", "definition": "to make intricate or complex" },
+    { "word": "drumpulate", "definition": "to produce a deep, resonant sound" },
+    {
+      "word": "exophysis",
+      "definition": "an outgrowth or projection of tissue"
+    },
+    { "word": "flimbuster", "definition": "to confuse or thwart by deception" },
+    {
+      "word": "gluvenize",
+      "definition": "to coat or cover with a sticky substance"
+    },
+    {
+      "word": "harklish",
+      "definition": "to listen attentively or with interest"
+    },
+    {
+      "word": "interclate",
+      "definition": "to insert or interpose between things"
+    },
+    {
+      "word": "jimbolize",
+      "definition": "to exaggerate or overstate with enthusiasm"
+    },
+    {
+      "word": "klaxatron",
+      "definition": "a device that emits a loud warning signal"
+    },
+    { "word": "lubridize", "definition": "to make smooth or slippery" },
+    {
+      "word": "morclify",
+      "definition": "to transform into a small, dark fragment"
+    },
+    { "word": "nuvulate", "definition": "to form or gather into clouds" },
+    {
+      "word": "ostrafine",
+      "definition": "to refine or improve to an extreme degree"
+    },
+    { "word": "plungrify", "definition": "to dive or thrust forcefully into" },
+    {
+      "word": "quarmulate",
+      "definition": "to gather or assemble in great numbers"
+    },
+    {
+      "word": "rumbolate",
+      "definition": "to move or travel in a zigzag pattern"
+    },
+    { "word": "scorptize", "definition": "to sting or cause intense pain" },
+    { "word": "thlixify", "definition": "to mix or blend thoroughly" },
+    {
+      "word": "ultracate",
+      "definition": "to refine or purify to the highest degree"
+    },
+    { "word": "vultrate", "definition": "to tear or rip apart violently" },
+    { "word": "wibberize", "definition": "to wobble or shake unsteadily" },
+    { "word": "xanthore", "definition": "a yellowish or golden hue" },
+    { "word": "yopulate", "definition": "to make a loud, cheerful noise" },
+    {
+      "word": "zibblify",
+      "definition": "to confuse or complicate unnecessarily"
+    },
+    {
+      "word": "abzurd",
+      "definition": "extremely unreasonable, illogical, or ridiculous"
+    },
+    { "word": "bluxfer", "definition": "to transfer or move with great force" },
+    { "word": "clavand", "definition": "a sudden, sharp sound or noise" },
+    {
+      "word": "drixling",
+      "definition": "to drip or trickle slowly and steadily"
+    },
+    {
+      "word": "epzynine",
+      "definition": "a powerful stimulant or energizing substance"
+    },
+    {
+      "word": "flivront",
+      "definition": "to flutter or wave gently in the breeze"
+    },
+    { "word": "glorphin", "definition": "a thick, sticky substance" },
+    {
+      "word": "hulgrate",
+      "definition": "to grate or grind with a deep, rumbling sound"
+    },
+    {
+      "word": "ignifuge",
+      "definition": "a substance that prevents or resists ignition"
+    },
+    {
+      "word": "jypture",
+      "definition": "a sudden, unexpected occurrence or event"
+    },
+    {
+      "word": "klarnify",
+      "definition": "to clarify or make clear and understandable"
+    },
+    {
+      "word": "luminite",
+      "definition": "a mineral that emits light when exposed to radiation"
+    },
+    {
+      "word": "muvember",
+      "definition": "a month characterized by movement and change"
+    },
+    {
+      "word": "nimbolize",
+      "definition": "to surround or envelop with a nimbus or halo"
+    },
+    {
+      "word": "osculant",
+      "definition": "tending or inclined to kiss or touch closely"
+    },
+    { "word": "plazmify", "definition": "to transform or convert into plasma" },
+    {
+      "word": "quimboid",
+      "definition": "resembling or characteristic of a quirky or eccentric person"
+    },
+    { "word": "roqulate", "definition": "to rumble or grumble loudly" },
+    { "word": "skrypnis", "definition": "a squeaking or creaking sound" },
+    {
+      "word": "threndle",
+      "definition": "to weave or interlace in a delicate pattern"
+    },
+    { "word": "ultroz", "definition": "extremely advanced or futuristic" },
+    { "word": "vlixen", "definition": "a mischievous or playful creature" },
+    { "word": "wyrnth", "definition": "a twisting or coiling motion" },
+    {
+      "word": "xenstic",
+      "definition": "relating to or characteristic of foreigners or foreign cultures"
+    },
+    {
+      "word": "yelphoid",
+      "definition": "resembling or characteristic of a joyful or enthusiastic person"
+    },
+    { "word": "zorblate", "definition": "to consume or devour greedily" }
+  ]
+}
