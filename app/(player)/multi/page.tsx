@@ -1,12 +1,11 @@
-"use client";
-
 import Image from "next/image";
 
 import { Card } from "../selector";
+import Continue from "./button.client";
 
-export default async function Home() {
+export default function Home() {
   return (
-    <div className="w-full h-fit md:h-[120svh] flex flex-col items-center justify-start relative  font-bold">
+    <div className="w-full h-fit md:h-[100svh] flex flex-col items-center justify-start relative  font-bold">
       <Image
         src="/Boat.png"
         fill
@@ -23,26 +22,7 @@ export default async function Home() {
         <Card player="Player1" red={true} />
         <Card player="Player2" red={false} />
       </div>
-      <p
-        className="text-white bg-[#22C55E] p-3 text-3xl rounded-lg z-30 mb-5 hover:cursor-pointer"
-        onClick={() => {
-          if (localStorage.getItem("Player1") === null) {
-            localStorage.setItem(
-              "Player1",
-              JSON.stringify({ name: "Guest1", url: "1234" })
-            );
-          }
-          if (localStorage.getItem("Player2") === null) {
-            localStorage.setItem(
-              "Player2",
-              JSON.stringify({ name: "Guest2", url: "1234" })
-            );
-          }
-          window.location.assign("/level");
-        }}
-      >
-        Continue
-      </p>
+      <Continue />
     </div>
   );
 }

@@ -1,21 +1,23 @@
 "use client";
-import { faCheck, faRandom } from "@fortawesome/fontawesome-free-solid";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { Check, Shuffle } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
+import toast from "react-hot-toast";
 
 interface CardProps {
   player: string;
   red: boolean;
+  redirect?: boolean;
 }
 
-export const Card: FC<CardProps> = ({ player, red }) => {
+export const Card: FC<CardProps> = ({ player, red, redirect }) => {
   const [url, setUrl] = useState("/Default.svg");
   const [name, setName] = useState("Guest");
   const [personSeed, setPersonSeed] = useState("1234");
+  const router = useRouter();
 
   const genAvatar = async () => {
     const seed = Math.random().toString();
@@ -30,10 +32,6 @@ export const Card: FC<CardProps> = ({ player, red }) => {
     setUrl(link);
   };
 
-  useEffect(() => {
-    genAvatar();
-  }, []);
-
   return (
     <div
       className={`${
@@ -44,8 +42,7 @@ export const Card: FC<CardProps> = ({ player, red }) => {
         <div className="w-[130px] h-[130px] bg-[#1E1E1E] flex flex-col items-center justify-center ml-2">
           <Image alt="Avatar" src={url} width={100} height={100}></Image>
         </div>
-        <FontAwesomeIcon
-          icon={faRandom as IconProp}
+        <Shuffle
           className="w-[50px] h-[50px] text-[#22C55E] bg-white p-4 rounded-lg hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-300"
           onClick={genAvatar}
         />
@@ -59,12 +56,19 @@ export const Card: FC<CardProps> = ({ player, red }) => {
           setName(e.target.value);
         }}
       ></input>
-      <FontAwesomeIcon
-        icon={faCheck as IconProp}
+      <Check
         className="w-[50px] h-[50px] text-white bg-[#22C55E] p-4 rounded-lg hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-300"
         onClick={() => {
           localStorage.setItem(player, JSON.stringify({ name, personSeed }));
-          console.log(personSeed);
+          toast.success(`${player} Created`);
+          if (redirect) {
+            localStorage.setItem(
+              player,
+              JSON.stringify({ name: name, url: url })
+            );
+            router.prefetch("/level");
+            router.push("/level");
+          }
         }}
       />
     </div>

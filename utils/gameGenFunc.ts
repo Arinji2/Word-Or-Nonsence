@@ -19,7 +19,7 @@ export const gameGenFunc = async () => {
     } else {
       data = await genFakeFunc(finalWordArr);
     }
-    console.log(data);
+
     finalArr.push(data);
     finalWordArr.push(data.word);
   }
@@ -31,15 +31,13 @@ export const getWordFunc = async () => {
     word: "",
     definition: "",
     mode: "",
-  };
+  } as WordType;
   const num = Math.floor(Math.random() * 2);
   if (num === 0) {
-    data = (await genRealFunc(data.word)) as WordType;
+    data = await genRealFunc(data.word);
   } else {
-    data = (await genFakeFunc(data.word)) as WordType;
+    data = await genFakeFunc(data.word);
   }
-
-  console.log(data);
 
   return data;
 };

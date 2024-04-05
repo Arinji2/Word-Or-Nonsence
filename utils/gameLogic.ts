@@ -14,7 +14,7 @@ export async function genFakeWord(word: string[] | string) {
       Authorization: `${process.env.ACCESS_KEY}`,
       "Content-Type": "application/json",
     },
-    cache: "force-cache",
+    cache: "no-store",
     body: JSON.stringify([
       {
         role: "system",
@@ -70,7 +70,7 @@ export async function genOtherWords(word: string[] | string) {
       Authorization: `${process.env.ACCESS_KEY}`,
       "Content-Type": "application/json",
     },
-    cache: "force-cache",
+    cache: "no-store",
     body: JSON.stringify([
       {
         role: "system",

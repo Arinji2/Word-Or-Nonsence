@@ -1,26 +1,23 @@
 "use client";
 
 import { getWordFunc } from "@/utils/gameGenFunc";
-import { Player, WordType } from "@/utils/types";
-import { faThumbsDown, faThumbsUp } from "@fortawesome/fontawesome-free-solid";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Player } from "@/utils/types";
+
+import { ThumbsDown, ThumbsUp } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import Loading from "./loading";
-import React from "react";
-import Error from "./error";
+import React, { useEffect, useState } from "react";
 import Correct from "./correct";
+import Error from "./error";
+import Loading from "./loadingComponent";
 
 interface Props {
   level: string;
   question: string;
   player: string;
-  serverArr: WordType[];
 }
 
-export function Card({ level, question, player, serverArr }: Props) {
+export function Card({ level, question, player }: Props) {
   const router = useRouter();
   const [time, setTime] = useState(9999);
   const [real, setReal] = useState(false);
@@ -53,7 +50,7 @@ export function Card({ level, question, player, serverArr }: Props) {
         router.push(`/game/${player}/${level}/${parseInt(question) + 1}`);
       }, 1000);
     }
-  }, [time]);
+  }, [time, router, question, player, level]);
 
   useEffect(() => {
     if (word.mode === "Real" || word.mode === "real") setReal(true);
@@ -90,7 +87,9 @@ export function Card({ level, question, player, serverArr }: Props) {
           currentlyPlaying === 0 ? "score1" : "score2",
           scoreInt.toString()
         );
+
         setCorrect(true);
+
         setTimeout(() => {
           router.push(`/game/${player}/${level}/${parseInt(question) + 1}`);
         }, 1000);
@@ -113,26 +112,19 @@ export function Card({ level, question, player, serverArr }: Props) {
 
   useEffect(() => {
     if (parseInt(question) === 10) router.push("/game/finish");
-    if (parseInt(question) === 0) {
+
+    getWordFunc().then((word) => {
       setWord({
-        word: serverArr[parseInt(question)].word,
-        definition: serverArr[parseInt(question)].definition,
-        mode: serverArr[parseInt(question)].mode,
+        word: word.word,
+        definition: word.definition,
+        mode: word.mode,
       });
       setLoading(false);
-      setTime(10);
-    } else {
-      getWordFunc().then((word) => {
-        setWord({
-          word: word.word,
-          definition: word.definition,
-          mode: word.mode,
-        });
-        setLoading(false);
+      new Promise((resolve) => setTimeout(resolve, 500)).then(() => {
         setTime(10);
       });
-    }
-  }, [question, serverArr, router]);
+    });
+  }, [question, router]);
 
   useEffect(() => {
     const locQuestion = parseInt(question);
@@ -174,9 +166,9 @@ export function Card({ level, question, player, serverArr }: Props) {
   };
   return (
     <React.Fragment>
-      {loading && <Loading />}
-      {error && <Error />}
-      {correct && <Correct />}
+      <Loading loading={loading} />
+      <Error show={error} />
+      <Correct show={correct} />
       <div className="w-full h-[100svh]  flex flex-col items-center justify-center relative overflow-x-hidden">
         <Image
           src={`/levels/${level}.png`}
@@ -217,10 +209,7 @@ export function Card({ level, question, player, serverArr }: Props) {
                 setAnswered(true);
               }}
             >
-              <FontAwesomeIcon
-                icon={faThumbsUp as IconProp}
-                className="w-[60px] h-[60px] text-white"
-              />
+              <ThumbsUp className="w-[60px] h-[60px] text-white" />
             </div>
             <div className="h-[120px] md:h-[140px] w-[7px] bg-white rounded-lg"></div>
             <div
@@ -231,10 +220,7 @@ export function Card({ level, question, player, serverArr }: Props) {
                 setAnswered(true);
               }}
             >
-              <FontAwesomeIcon
-                icon={faThumbsDown as IconProp}
-                className="w-[60px] h-[60px] text-white"
-              />
+              <ThumbsDown className="w-[60px] h-[60px] text-white" />
             </div>
           </div>
 

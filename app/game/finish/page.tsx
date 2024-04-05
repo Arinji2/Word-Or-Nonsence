@@ -31,9 +31,6 @@ function Page() {
     if (score2Loc !== null) setScore2(score2Loc);
   }, []);
 
-  useEffect(() => {
-    console.log(player1, player2);
-  }, [player1, player2]);
   return (
     <div className="w-full md:h-[100svh] h-fit relative flex flex-col items-center justify-center">
       <Image
@@ -85,7 +82,7 @@ const Card: FC<{ name: string; link: string; score: string }> = ({
       const svg = await fetch(
         `https://api.dicebear.com/6.x/pixel-art/svg?seed=${link}`
       );
-      console.log(link);
+
       const blob = await svg.blob();
       const linkLoc = URL.createObjectURL(blob);
 
