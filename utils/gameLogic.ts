@@ -13,6 +13,7 @@ export async function genFakeWord(word: string[] | string) {
     headers: {
       Authorization: `${process.env.ACCESS_KEY}`,
       SPEED: "FAST",
+      FROM: "WORD-OR-NOT",
       "Content-Type": "application/json",
     },
     cache: "no-store",
@@ -70,6 +71,7 @@ export async function genOtherWords(word: string[] | string) {
     headers: {
       Authorization: `${process.env.ACCESS_KEY}`,
       SPEED: "FAST",
+      FROM: "WORD-OR-NOT",
       "Content-Type": "application/json",
     },
     cache: "no-store",
