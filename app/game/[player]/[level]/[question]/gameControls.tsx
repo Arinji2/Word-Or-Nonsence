@@ -112,18 +112,20 @@ export function Card({ level, question, player }: Props) {
 
   useEffect(() => {
     if (parseInt(question) === 10) router.push("/game/finish");
+    setTimeout(() => {
+      getWordFunc().then((word) => {
+        setWord({
+          word: word.word,
+          definition: word.definition,
+          mode: word.mode,
+        });
 
-    getWordFunc().then((word) => {
-      setWord({
-        word: word.word,
-        definition: word.definition,
-        mode: word.mode,
+        setLoading(false);
+        new Promise((resolve) => setTimeout(resolve, 500)).then(() => {
+          setTime(10);
+        });
       });
-      setLoading(false);
-      new Promise((resolve) => setTimeout(resolve, 500)).then(() => {
-        setTime(10);
-      });
-    });
+    }, 3000);
   }, [question, router]);
 
   useEffect(() => {
