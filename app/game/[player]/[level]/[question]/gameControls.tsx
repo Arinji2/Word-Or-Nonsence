@@ -47,6 +47,10 @@ export function Card({ level, question, player }: Props) {
     if (time === 0) {
       setError(true);
       setTimeout(() => {
+        setError(false);
+        setLoading(true);
+      }, 1000);
+      setTimeout(() => {
         router.push(`/game/${player}/${level}/${parseInt(question) + 1}`);
       }, 1000);
     }
@@ -89,15 +93,25 @@ export function Card({ level, question, player }: Props) {
         );
 
         setCorrect(true);
+        setLoading(true);
 
         setTimeout(() => {
-          router.push(`/game/${player}/${level}/${parseInt(question) + 1}`);
-        }, 1000);
+          setCorrect(false);
+          setTimeout(() => {
+            router.replace(
+              `/game/${player}/${level}/${parseInt(question) + 1}`
+            );
+          }, 1000);
+        }, 600);
       }
       setError(true);
+      setLoading(true);
       setTimeout(() => {
-        router.push(`/game/${player}/${level}/${parseInt(question) + 1}`);
-      }, 1000);
+        setError(false);
+        setTimeout(() => {
+          router.replace(`/game/${player}/${level}/${parseInt(question) + 1}`);
+        }, 1000);
+      }, 600);
     }
   }, [
     answered,
@@ -166,11 +180,12 @@ export function Card({ level, question, player }: Props) {
     const link = URL.createObjectURL(blob);
     return link;
   };
+
   return (
     <React.Fragment>
-      <Loading loading={loading} />
       <Error show={error} />
       <Correct show={correct} />
+      <Loading loading={loading} />
       <div className="w-full h-[100svh]  flex flex-col items-center justify-center relative overflow-x-hidden">
         <Image
           src={`/levels/${level}.png`}

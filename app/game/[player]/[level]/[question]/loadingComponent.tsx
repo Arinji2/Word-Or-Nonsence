@@ -6,7 +6,7 @@ export default function Loading({ loading }: { loading: boolean }) {
     <div
       className={`${
         loading ? "translate-y-0 " : "-translate-y-full "
-      } ease-in-out duration-500 will-change-transform transition-transform w-full h-[100svh] flex flex-col items-center justify-center fixed top-0 z-[500] bg-[#1E1E1E] gap-5 md:gap-10 m-2`}
+      } ease-in-out duration-500 will-change-transform transition-transform w-full h-[100svh] flex flex-col items-center justify-center fixed top-0 z-[500] bg-[#1E1E1E] gap-5 md:gap-10 `}
     >
       <h1 className="mt-52 md:mt-40 text-[35px] md:text-[60px] text-white z-30 text-center">
         How To Play
